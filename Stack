@@ -26,7 +26,7 @@ public:
 };
 
 template <class T>
-Stack<T>::Stack(){
+Stack<T>::Stack(){          //constructor
     m_top = -1;
     m_capacity= 10;
     m_elements = new T[m_capacity];
@@ -80,7 +80,7 @@ void Stack<T>::print(){
 }
 
 template <class T>
-Stack<T>::~Stack(){
+Stack<T>::~Stack(){         //Destructor
     
     delete m_elements;
 }
