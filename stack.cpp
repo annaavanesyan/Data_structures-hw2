@@ -53,7 +53,7 @@ void Stack<T>::push(T element){
 template <class T>
 void Stack<T>::pop(){
     if(!is_empty()) {
-        m_elements[m_top] = NULL;
+        m_elements[m_top] = nullptr;
         m_top--;
     }
     else{
