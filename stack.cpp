@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 template <class T>
 class Stack
 {
@@ -35,20 +36,29 @@ Stack<T>::Stack(){          //constructor
 template <class T>
 void Stack<T>::push(T element){
     
-    if(m_top != m_capacity){
-        m_top++;
-        m_elements[m_top] = element;
+    if(!is_empty()) {
+        if(m_top != m_capacity){
+            m_top++;
+            m_elements[m_top] = element;
+        }
+        else{
+            cout << "Stack is full" << endl;
+        }
     }
     else{
-        cout << "Stack is full" << endl;
+        cout << " The stack is already empty" << endl;
     }
 }
 
 template <class T>
 void Stack<T>::pop(){
-    
-    m_elements[m_top] = NULL;
-    m_top--;
+    if(!is_empty()) {
+        m_elements[m_top] = NULL;
+        m_top--;
+    }
+    else{
+        cout << " The stack is empty" << endl;
+    }
 }
 
 template <class T>
@@ -63,8 +73,12 @@ bool Stack<T>::is_empty(){
 
 template <class T>
 T Stack<T>::get_top(){
-    
-    return m_elements[m_top];
+    if(!is_empty()) {
+        return m_elements[m_top];
+    }
+    else{
+        cout << "The stack is empty" << endl;
+    }
 }
 
 template <class T>
