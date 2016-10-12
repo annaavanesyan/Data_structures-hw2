@@ -32,7 +32,7 @@ Queue<T>::Queue(){
 template <class T>
 void Queue<T>::enqueue(T element){
     
-    m_list->insert(m_list->get_size(), element);
+    m_list->set(m_list->get_size(), element);
 }
 
 template <class T>
